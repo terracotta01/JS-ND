@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <div class="container"></div>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>  
+<script>
+//    parasyt cikla 
+    $(document).ready(function(){
+        var images = ["https://raw.githubusercontent.com/zigmantasvcs/resources/master/images/offers/bycycle.jpg", "https://raw.githubusercontent.com/zigmantasvcs/resources/master/images/offers/chess.jpg", "https://raw.githubusercontent.com/zigmantasvcs/resources/master/images/offers/jump.jpg", "https://raw.githubusercontent.com/zigmantasvcs/resources/master/images/offers/kiting.jpg", "https://raw.githubusercontent.com/zigmantasvcs/resources/master/images/offers/lion.jpg", "https://raw.githubusercontent.com/zigmantasvcs/resources/master/images/offers/onwater.jpg", "https://raw.githubusercontent.com/zigmantasvcs/resources/master/images/offers/para.jpg", "https://raw.githubusercontent.com/zigmantasvcs/resources/master/images/offers/photographer.jpg", "https://raw.githubusercontent.com/zigmantasvcs/resources/master/images/offers/pieva.jpg", "https://raw.githubusercontent.com/zigmantasvcs/resources/master/images/offers/supynes.jpg"];
+        
+        var parameter = {
+            dataType: "text",
+            url: images[0]
+        };
+        
+        $.ajax(parameter).done(function() {
+            $.each(images, function(index, value){
+                var image = $("<img>");
+                image.prop("src", value).css("width", "200px");
+                $(".container").append(image);
+            })
+        });
+    })
+    
+    
+</script>
+</body>
+</html>
