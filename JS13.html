@@ -16,7 +16,7 @@
       
             $.each(images, function(index, value){
                 var image = $("<img>");
-                image.prop("src", value).css("width", "200px").attr("alt", value.slice(78, 94));
+                image.prop("src", value).css("width", "200px").attr("alt", value.slice(78, value.length));
 //                console.log(value.length);
                 $(".container").append(image);
             })
