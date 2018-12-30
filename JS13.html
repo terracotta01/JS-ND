@@ -16,8 +16,10 @@
       
             $.each(images, function(index, value){
                 var image = $("<img>");
-                image.prop("src", value).css("width", "200px").attr("alt", value.slice(78, value.length));
-//                console.log(value.length);
+                var date = new Date();
+                var currentDate = date.getFullYear() + "-" + (date.getMonth()+1) + "-" + date.getDate();
+//                console.log(currentDate);
+                image.prop("src", value).css("width", "200px").attr("alt", value.slice(78, value.length)).attr("title", value.slice(78, value.indexOf(".jpg"))+ ' ' + currentDate);
                 $(".container").append(image);
             })
     })
